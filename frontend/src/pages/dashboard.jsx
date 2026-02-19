@@ -15,11 +15,10 @@ const Dashboard = () => {
         profile_image: "",
         status: ""
     });
-
-    // 🔥 Fetch Users
+ 
     const fetchUsers = async () => {
         const res = await API.get("/users/view");
-        setUsers(res.data); // agar backend data wrapper deta hai toh yaha change karna
+        setUsers(res.data); 
     };
 
     useEffect(() => {

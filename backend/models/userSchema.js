@@ -2,16 +2,38 @@ import mongoose from "mongoose";
 
 const userSchema = new mongoose.Schema(
   {
-    name: { type: String, required: true },
-    lastname: { type: String, required: true },
-    user_name: { type: String, required: true },
-    email: { type: String, required: true },
-    phone: { type: String, required: true },
-    profile_image: { type: String, required: false },
+    name: { type: String, required: true, trim: true },
+
+    lastname: { type: String, required: true, trim: true },
+
+    user_name: { 
+      type: String, 
+      required: true, 
+      unique: true,   
+      trim: true 
+    },
+
+    email: { 
+      type: String, 
+      required: true, 
+      unique: true,   
+      lowercase: true 
+    },
+
+    phone: { 
+      type: String, 
+      required: true 
+    },
+
+    profile_image: { 
+      type: String, 
+      default: ""     
+    },
+
     status: {
       type: String,
       enum: ["Active", "Inactive"],
-      required: true,
+      default: "Active",   
     },
   },
   { timestamps: true }

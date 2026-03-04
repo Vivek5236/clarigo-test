@@ -2,7 +2,7 @@ import { Auth } from "../models/authSchema.js";
 import jwt from "jsonwebtoken";
 import Joi from "joi";
 import bcrypt from "bcrypt";
-import ApiResponse from "../utils/apiResponse.js";
+
 
 export const loginUser = async (req, res) => {
     try {
